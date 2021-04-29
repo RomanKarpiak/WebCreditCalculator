@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Credit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+    <h2>New Client</h2>
+    <form action="/credit/create/save" method="post" modelattribute="credit">
+        <label>Enter name</label><br>
+        <input type="text" name="name" pattern="^[A-Za-zА-Яа-яЁё]+$" placeholder="Consumer credit" required><br>
+        <label>Enter Credit Limit</label><br>
+        <input type="text" name="creditLimit" max="100000000" placeholder="15000000" required><br>
+        <label>Enter Interest Rate</label><br>
+        <input type="text" name="interestRate" min="0" max="30" step="0.01" placeholder="10.5" required><br>
+        <button type="submit" >Create</button>
+    </form>
+</div>
+
+</body>
+</html>

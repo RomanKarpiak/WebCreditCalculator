@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8">
+    <title>Payments Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+   </style>
+
+</head>
+<body>
+<div align="center">
+    <h1>Payments Schedule</h1>
+    <h3><a href="/credit-offer/client?id={{#client}}{{id}}{{/client}}">Back</a></h3>
+    <h1>Loan Payment Summary</h1>
+    {{#loanPaymentSummary}}
+        <h3>Monthly Payment: {{monthlyPayment}}</h3>
+        <h3>Total Interest Paid: {{totalInterestPaid}}</h3>
+        <h3>Total Payments: {{totalPayments}}</h3>
+    {{/loanPaymentSummary}}
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Month</th>
+            <th>Principal</th>
+            <th>Monthly Payment</th>
+            <th>Interest Paid</th>
+            <th>Principal Paid</th>
+            <th>New Balance</th>
+        </tr>
+        {{#payments}}
+            <tr>
+                <td>{{month}}</td>
+                <td>{{principal}}</td>
+                <td>{{monthlyPayment}}</td>
+                <td>{{interestPaid}}</td>
+                <td>{{principalPaid}}</td>
+                <td>{{newBalance}}</td>
+            </tr>
+        {{/payments}}
+    </table>
+</div>
+</body>
+</html>

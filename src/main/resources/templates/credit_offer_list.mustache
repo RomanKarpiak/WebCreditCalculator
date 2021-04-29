@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8">
+    <title>Credit Offer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+</style>
+
+</head>
+<body>
+<div align="center">
+    <h1>Credit Offer</h1>
+    <h3><a href="/">Back </a></h3>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Passport</th>
+            <th>Credit</th>
+            <th>Interest Rate</th>
+            <th>Loan Amount</th>
+            <th>Loan Term Year</th>
+        </tr>
+        {{#offers}}
+            <tr>
+                {{#client}}
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{email}}</td>
+                    <td>{{passport}}</td>
+                {{/client}}
+                {{#credit}}
+                    <td>{{name}}</td>
+                    <td>{{interestRate}}</td>
+                {{/credit}}
+                <td>{{loanAmount}}</td>
+                <td>{{loanTermYear}}</td>
+            </tr>
+        {{/offers}}
+    </table>
+</div>
+</body>
+</html>

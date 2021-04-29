@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
+    <title>Client Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+</style>
+
+</head>
+<body>
+<div align="center">
+<h1>Client Manager</h1>
+    <div>
+        <form method="post" action="/client-manager/filter">
+            Filter:
+            <input type="text" name="filter" placeholder="input Last Name"/>
+            &nbsp;
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <h3><a href="/">Back </a></h3>
+    <h3><a href="/client-manager/create">New Client</a></h3>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Passport</th>
+            <th>Action</th>>
+        </tr>
+
+        {{#clientList}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{firstName}}</td>
+                <td>{{lastName}}</td>
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+                <td>{{passport}}</td>
+                <td>
+                    <a href="/client-manager/update?id={{id}}">Edit</a>
+                    <a href="/client-manager/delete?id={{id}}">Delete</a>
+                    <a href="/credit-offer/client?id={{id}}">Offer</a>
+                </td>
+            </tr>
+        {{/clientList}}
+    </table>
+</div>
+</body>
+</html>
